@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+</head>
+<body>
+ <div class="container">
+
+
+<h5>Grazie per l'acquisto</h5>
+<table>
+        <thead>
+          <tr>
+              <th>Modelli </th>
+              <th>Quantità</th>
+              <th>Prezzo </th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr th:each = "auto: ${listaP}">
+            <td th:text="${auto.getModello()}"></td>
+            <td  th:text="${auto.getPezzi()}"></td>
+            <td  th:text="${auto.getPrezzo()}"></td>
+           </tr>
+          <tr>
+        
+        </tbody>
+      </table>
+
+
+<form action = "/show" method = "get">
+
+<input type = "submit" value = "show">
+</form>
+</div>
+</body>
+</html>
